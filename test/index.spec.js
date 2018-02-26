@@ -22,7 +22,6 @@ test('Unit test setMapStateToProps', () => {
     text: 'Bonjour',
     theDeeperText: 'DeeperBonjour',
   };
+
   expect(setMapStateToProps(inputMock)(stateMock)).toEqual(outputMock);
 });
-
-
