@@ -3,7 +3,15 @@
   "version": "0.1.0",
   "description": "A React High-Order Component to simplify the usage of mapStateToProps and mapDispatchToProps of react-redux",
   "license": "MIT",
-  "keywords": [ "redux", "react", "hoc","High Order Component", "reacr-redux", "redux-connector", "hoc-redux-connector" ],
+  "keywords": [
+    "redux",
+    "react",
+    "hoc",
+    "High Order Component",
+    "react-redux",
+    "redux-connector",
+    "hoc-redux-connector"
+  ],
   "bugs": {
     "url": "https://github.com/llccrr/hoc-connect-to-redux/issues"
   },
@@ -14,12 +22,12 @@
       "**/*.{js,jsx}",
       "!**/node_modules/**"
     ]
-
   },
   "peerDependencies": {
     "react": "^16.2.0"
   },
   "dependencies": {
+    "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",

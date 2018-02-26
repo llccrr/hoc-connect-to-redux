@@ -1,29 +1,35 @@
 ## Usage
+```
+yarn add hoc-redux-connector
+```
+```
+npm install --save hoc-redux-connector
+```
 
 To subscribe the component to the store you can use it this way :
 ```js
-import { connectToRedux } from '../x';
+import { connectToRedux } from 'hoc-redux-connector';
 
 // Here a Basic React component
-const PureDisplayer = ({ myText, myDeeperText }) => (
+const PureDisplayer = ({ myDeeperText, ...props }) => (
     <ul>
-        <li>{myText}</li>
+        <li>{props.myText}</li>
         <li>{myDeeperText}</li>
     </ul>
 );
 
 export const Displayer = connectToRedux({
-  myText: "reducerName.text",
-  myDeeperText: "reducerName.deeperText.text"
+  myText: 'reducerName.text',
+  myDeeperText: 'reducerName.deeperText.text'
 })(PureDisplayer);
 // Once connected, you can access to myText and myDeeperText from your component props
 ```
 To connect actions to a component you can use it this way :
 ```js
-import { myAction, mySecondAction } from '../redux/actions';
+import { myAction, mySecondAction } from 'path_to_your_actions';
 
-const PureDispatcher = ({ newActionName }) => (
-    <Button onClick={(string) => newActionName(string)}/>
+const PureDispatcher = (props) => (
+    <Button onClick={(string) => props.newActionName(string)}/>
 );
 
 export const Dispatcher = connectToRedux(null, {
