@@ -1,32 +1,30 @@
-import { connect } from "react-redux";
-import { get } from "lodash";
+import { connect } from 'react-redux';
+import { get } from 'lodash';
 
 export const setMapStateToProps = subscribedNodes => state => ({
   ...Object.keys(subscribedNodes).reduce(
     (acc, key) => ({
       ...acc,
-      [key]: get(state, subscribedNodes[key])
+      [key]: get(state, subscribedNodes[key]),
     }),
-    {}
-  )
+    {},
+  ),
 });
 
 export const setMapDispatchToProps = dispatchObject => dispatch =>
   Object.keys(dispatchObject)
     .map(keys => ({
-      [keys]: (...args) => dispatch(dispatchObject[keys](...args))
+      [keys]: (...args) => dispatch(dispatchObject[keys](...args)),
     }))
     .reduce((last, curr) => ({ ...last, ...curr }), {});
 
 export const connectToRedux = (
   subscribedKeys = null,
-  actionCreators = null
+  actionCreators = null,
 ) => WrappedComponent =>
   connect(
     subscribedKeys ? () => setMapStateToProps(subscribedKeys) : null,
-    actionCreators ? () => setMapDispatchToProps(actionCreators) : null
+    actionCreators ? () => setMapDispatchToProps(actionCreators) : null,
   )(WrappedComponent);
 
-// TODO: Write test
-// TODO: Handle error
-// TODO: Remove lodash dependency ok
+// TODO: Remove lodash dependency { get }
