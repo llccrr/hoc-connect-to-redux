@@ -1,7 +1,8 @@
 {
   "name": "hoc-redux-connector",
   "version": "0.0.1",
-  "description": "Put a description here",
+  "description":
+    "A React High-Order Component to simplify the usage of mapStateToProps and mapDispatchToProps of react-redux",
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^16.2.0"
