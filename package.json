@@ -1,9 +1,21 @@
 {
   "name": "hoc-redux-connector",
-  "version": "0.0.1",
-  "description":
-    "A React High-Order Component to simplify the usage of mapStateToProps and mapDispatchToProps of react-redux",
+  "version": "0.1.0",
+  "description": "A React High-Order Component to simplify the usage of mapStateToProps and mapDispatchToProps of react-redux",
+  "license": "MIT",
+  "keywords": [ "redux", "react", "hoc","High Order Component", "reacr-redux", "redux-connector", "hoc-redux-connector" ],
+  "bugs": {
+    "url": "https://github.com/llccrr/hoc-connect-to-redux/issues"
+  },
   "main": "build/index.js",
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
+
+  },
   "peerDependencies": {
     "react": "^16.2.0"
   },
@@ -14,7 +26,7 @@
     "webpack": "^3.11.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack --watch",
     "build": "webpack"
   },
@@ -28,6 +40,7 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.5.1",
+    "jest": "^22.4.2"
   }
 }

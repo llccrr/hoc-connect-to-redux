@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { get } from "lodash";
 
-const setMapStateToProps = subscribedNodes => state => ({
+export const setMapStateToProps = subscribedNodes => state => ({
   ...Object.keys(subscribedNodes).reduce(
     (acc, key) => ({
       ...acc,
@@ -11,7 +11,7 @@ const setMapStateToProps = subscribedNodes => state => ({
   )
 });
 
-const setMapDispatchToProps = dispatchObject => dispatch =>
+export const setMapDispatchToProps = dispatchObject => dispatch =>
   Object.keys(dispatchObject)
     .map(keys => ({
       [keys]: (...args) => dispatch(dispatchObject[keys](...args))
