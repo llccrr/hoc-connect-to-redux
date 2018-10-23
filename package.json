@@ -1,6 +1,6 @@
 {
   "name": "hoc-redux-connector",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description":
     "A React High-Order Component to simplify the usage of mapStateToProps and mapDispatchToProps of react-redux",
   "license": "MIT",
